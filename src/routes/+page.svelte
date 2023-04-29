@@ -20,14 +20,18 @@
   }
 </script>
 
-<h1>Fumble</h1>
-
-{#if $isAuthenticated}
-    <h2>Hey {$user.name}!</h2>
-    {#if $user.picture}
-        <img src={$user.picture} alt={user.name} />
-    {/if}
-    <button on:click={logout}>Logout</button>
-{:else}
-    <button on:click={login}>Login</button>
-{/if}
+<div class="w-10/12 mx-auto">
+  <h1 class="text-3xl font-bold">
+    Auth0 with SvelteKit
+  </h1>
+  
+  {#if $isAuthenticated}
+      <h2>Hey {$user.name}!</h2>
+      {#if $user.picture}
+          <img src={$user.picture} alt={user.name} />
+      {/if}
+      <button on:click={logout}>Logout</button>
+  {:else}
+      <button on:click={login}>Login</button>
+  {/if}
+</div>
